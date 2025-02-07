@@ -11,8 +11,8 @@ export class RickMortyService {
 
   constructor(private http: HttpClient) { }
 
-  getCharacters(): Observable<any>{
-    return this.http.get<any>(this.apiUrl) //Realiza una operación get hacia la url que hemos guardado en
+  getCharacters(page: number = 1): Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}/?page=${page}`) //Realiza una operación get hacia la url que hemos guardado en
   }
 
 }
